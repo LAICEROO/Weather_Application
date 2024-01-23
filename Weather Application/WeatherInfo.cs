@@ -6,41 +6,41 @@ using System.Threading.Tasks;
 
 namespace Weather_Application
 {
-    // Klasa WeatherInfo zawiera definicję struktur danych, które będą używane do przechowywania informacji pogodowych.
+    // The WeatherInfo class contains the definition of data structures that will be used to store weather information.
     class WeatherInfo
     {
-        // Klasa coord reprezentuje współrzędne geograficzne (długość i szerokość geograficzną)
+        // The coord class represents geographical coordinates (longitude and latitude).
         public class coord
         {
             public double lon { get; set; }
             public double lat { get; set; }
         }
-        // Klasa weather reprezentuje informacje dotyczące warunków pogodowych, takie jak główna kategoria, opis i ikona
+        // The weather class represents information about weather conditions, such as the main category, description, and icon.
         public class weather
         {
             public string main { get; set; }
             public string description { get; set; }
             public string icon { get; set; }
         }
-        // Klasa main zawiera główne informacje pogodowe, takie jak temperatura, ciśnienie i wilgotność
+        // The main class contains main weather information such as temperature, pressure, and humidity.
         public class main
         {
             public double temp { get; set; }
             public double pressure { get; set; }
             public double humidity { get; set; } 
         }
-        // Klasa wind reprezentuje informacje dotyczące wiatru, takie jak prędkość
+        // The wind class represents wind information, such as speed.
         public class wind
         {
             public double speed { get; set; }
         }
-        // Klasa sys zawiera informacje o wschodzie i zachodzie słońca
+        // The sys class contains information about sunrise and sunset times.
         public class sys
         {
             public long sunrise { get; set; }
             public long sunset { get; set; }
         }
-        // Klasa root jest główną klasą, która agreguje wszystkie informacje pogodowe
+        // The root class is the main class that aggregates all weather information.
         public class root
         {
             public coord coord { get; set; }

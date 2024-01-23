@@ -49,6 +49,9 @@
             this.labHuminfo = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labHum = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labTempF = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -163,7 +166,7 @@
             this.labPressure.BackColor = System.Drawing.Color.Transparent;
             this.labPressure.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPressure.ForeColor = System.Drawing.Color.White;
-            this.labPressure.Location = new System.Drawing.Point(547, 210);
+            this.labPressure.Location = new System.Drawing.Point(553, 266);
             this.labPressure.Name = "labPressure";
             this.labPressure.Size = new System.Drawing.Size(53, 25);
             this.labPressure.TabIndex = 12;
@@ -175,7 +178,7 @@
             this.labWindSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labWindSpeed.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labWindSpeed.ForeColor = System.Drawing.Color.White;
-            this.labWindSpeed.Location = new System.Drawing.Point(578, 154);
+            this.labWindSpeed.Location = new System.Drawing.Point(553, 210);
             this.labWindSpeed.Name = "labWindSpeed";
             this.labWindSpeed.Size = new System.Drawing.Size(53, 25);
             this.labWindSpeed.TabIndex = 11;
@@ -187,7 +190,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(398, 210);
+            this.label6.Location = new System.Drawing.Point(404, 266);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 25);
             this.label6.TabIndex = 10;
@@ -199,7 +202,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(398, 154);
+            this.label7.Location = new System.Drawing.Point(404, 210);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 25);
             this.label7.TabIndex = 9;
@@ -211,7 +214,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(615, 210);
+            this.label2.Location = new System.Drawing.Point(621, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 25);
             this.label2.TabIndex = 13;
@@ -223,7 +226,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(641, 154);
+            this.label5.Location = new System.Drawing.Point(621, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 25);
             this.label5.TabIndex = 14;
@@ -271,7 +274,7 @@
             this.labHuminfo.BackColor = System.Drawing.Color.Transparent;
             this.labHuminfo.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labHuminfo.ForeColor = System.Drawing.Color.White;
-            this.labHuminfo.Location = new System.Drawing.Point(398, 270);
+            this.labHuminfo.Location = new System.Drawing.Point(404, 326);
             this.labHuminfo.Name = "labHuminfo";
             this.labHuminfo.Size = new System.Drawing.Size(110, 25);
             this.labHuminfo.TabIndex = 18;
@@ -283,7 +286,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(609, 270);
+            this.label11.Location = new System.Drawing.Point(615, 326);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 25);
             this.label11.TabIndex = 19;
@@ -295,11 +298,47 @@
             this.labHum.BackColor = System.Drawing.Color.Transparent;
             this.labHum.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labHum.ForeColor = System.Drawing.Color.White;
-            this.labHum.Location = new System.Drawing.Point(547, 270);
+            this.labHum.Location = new System.Drawing.Point(553, 326);
             this.labHum.Name = "labHum";
             this.labHum.Size = new System.Drawing.Size(53, 25);
             this.labHum.TabIndex = 20;
             this.labHum.Text = "N/A";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(404, 154);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(143, 25);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Temperature:";
+            // 
+            // labTempF
+            // 
+            this.labTempF.AutoSize = true;
+            this.labTempF.BackColor = System.Drawing.Color.Transparent;
+            this.labTempF.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTempF.ForeColor = System.Drawing.Color.White;
+            this.labTempF.Location = new System.Drawing.Point(553, 154);
+            this.labTempF.Name = "labTempF";
+            this.labTempF.Size = new System.Drawing.Size(53, 25);
+            this.labTempF.TabIndex = 22;
+            this.labTempF.Text = "N/A";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(631, 154);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 25);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "°F";
             // 
             // Form1
             // 
@@ -308,6 +347,9 @@
             this.BackgroundImage = global::Weather_Application.Properties.Resources.storm_clouds;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.labTempF);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.labHum);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.labHuminfo);
@@ -361,6 +403,9 @@
         private System.Windows.Forms.Label labHuminfo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labHum;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labTempF;
+        private System.Windows.Forms.Label label13;
     }
 }
 

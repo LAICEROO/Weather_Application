@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net;
 using static Weather_Application.WeatherInfo;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Weather_Application
 {
@@ -21,66 +22,67 @@ namespace Weather_Application
 
         }
 
-        // Klucz API do OpenWeatherMap
+        // API Key for OpenWeatherMap 
         string APIKey = "2405d01daceb793f6062146c0b83f91d";
 
-        // Obsługa zdarzenia ładowania formularza
+        // Event handler for form loading
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
+        // Event handler for the search button click
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // Obsługa zdarzenia, gdy przycisk wyszukiwania jest kliknięty
-            getWeather();
+            //Event handler when the search button is clicked
+           getWeather();
         }
-        //Metoda do pobierania informacji pogodowych z API OpenWeatherMap
+        // Method to retrieve weather information from the OpenWeatherMap API
         void getWeather()
         {
-            // Użycie instrukcji using zapewnia właściwe zwolnienie zasobów WebClient
+            // Using statement ensures proper disposal of WebClient resources
             using (WebClient web = new WebClient())
             {
                 try
                 {
-                    // Budowanie adresu URL żądania API
-                  0  string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", TBCity.Text, APIKey);
+                    // Building the API request URL
+                    string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", TBCity.Text, APIKey);
 
-                    // Pobieranie JSON z odpowiedzi API
+                    // Downloading JSON from the API response
                     var json = web.DownloadString(url);
 
                     WeatherInfo.root Info = JsonConvert.DeserializeObject<WeatherInfo.root>(json);
 
-                    // Aktualizacja interfejsu użytkownika danymi pogodowymi
-                    labTemp.Text = Math.Round(((float)Info.main.temp - 273.15), 2).ToString("0");//Temperatura domyślnie podawana jest w kelwinach dlatego odejmujemy -273.15
-                    labHum.Text = Info.main.humidity.ToString(); //Konwertuje wartość wilgotności na ciąg znaków 
-                    labDetails.Text = Info.weather[0].description; //Odnosimy się do pierwszego elementu w kolekcji
-                    labSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString(); //Konwertuje czas zachodu słońca na krótki ciąg znaków reprezentujący tylko godzinę i minutę
-                    labSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString(); //Konwertuje czas wschodu słońca na krótki ciąg znaków reprezentujący tylko godzinę i minutę
-                    labWindSpeed.Text = (Info.wind.speed * 3.6).ToString(); //Możymy razy 3.6, ponieważ domyślna prędkość podowana jest w m/s
-                    labPressure.Text = Info.main.pressure.ToString(); //Konwertuje wartość ciśnienie na ciąg znaków 
+                    // Updating the user interface with weather data
+                    labTemp.Text = Math.Round(((float)Info.main.temp - 273.15), 2).ToString();// The temperature is initially provided in Kelvin. This line converts it to Celsius by subtracting 273.15 
+                    labTempF.Text = Math.Round(((float)Info.main.temp * 9 / 5 - 459.67), 2).ToString(); //The temperature is initially provided in Kelvin, so this line converts it to Fahrenheit by using the formula: Fahrenheit = (Kelvin * 9 / 5) - 459.67.
+                    labHum.Text = Info.main.humidity.ToString();  
+                    labDetails.Text = Info.weather[0].description; 
+                    labSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString(); // Converts the sunset time to a short string representing only the hour and minute.
+                    labSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();// Converts the sunrise time to a short string representing only the hour and minute.
+                    labWindSpeed.Text = Math.Round(Info.wind.speed * 3.6, 2).ToString();  //Multiply by 3.6 because the default speed is provided in meters per second (m/s)
+                    labPressure.Text = Info.main.pressure.ToString(); 
                 }
                 catch (WebException ex)
                 {
-                    // Obsługa błędów sieciowych
-                    MessageBox.Show("Błąd sieciowy podczas pobierania danych pogodowych: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Handling network errors
+                    MessageBox.Show("Network error while retrieving weather data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (JsonException ex)
                 {
-                    // Obsługa błędów deserializacji JSON
-                    MessageBox.Show("Błąd deserializacji danych JSON: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Handling JSON deserialization errors
+                    MessageBox.Show("JSON deserialization error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
-                    // Obsługa innych błędów
-                    MessageBox.Show("Wystąpił nieoczekiwany błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Handling other unexpected errors
+                    MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-        // Metoda do konwersji znacznika czasu Unix na DateTime
+        // Method to convert Unix timestamp to DateTime
         DateTime convertDateTime(long sec)
         {
-                                        //rok, miesiac, dzien, godzina, minuta, sekunda, milisekunda
+            // Year, month, day, hour, minute, second, millisecond
             DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
             day = day.AddSeconds(sec).ToLocalTime();
             return day; 
