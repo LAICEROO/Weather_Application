@@ -262,7 +262,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(322, 154);
+            this.label8.Location = new System.Drawing.Point(331, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 25);
             this.label8.TabIndex = 17;
@@ -346,7 +346,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Weather_Application.Properties.Resources.storm_clouds;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 407);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.labTempF);
             this.Controls.Add(this.label10);
