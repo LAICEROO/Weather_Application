@@ -24,9 +24,6 @@ This application utilizes the OpenWeatherMap API for weather data.
 ## How to Run
 Compile and run the application using your preferred C# development environment.
 
-## Acknowledgments
-- Weather data provided by OpenWeatherMap API.
-
 ## Screen from app
 ![image](https://github.com/LAICEROO/Weather_Application/assets/93771973/e00cd36f-7a36-44dd-a97b-f5bb69fe9ae7)
 
